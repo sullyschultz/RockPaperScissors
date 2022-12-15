@@ -7,14 +7,13 @@ function getComputerChoice () {
 // Make a function for playerSelection
 function getPlayerChoice () {
     let input = prompt("Write rock, paper or scissors");
-    while (input == null) { 
+    while (input == null || input == "") { 
         input = prompt("Write rock, paper or scissors");
     }
     input = input.toLowerCase();
     return input; 
-}
-    
 
+}
 // Make a function for playing a round, taking in computer choice and player choice
 
 function playRound() {
@@ -26,7 +25,7 @@ function playRound() {
         console.log( "You: ", playerSelection);
         console.log( "Computer: ", computerSelection);
         console.log(result);
-        //return result;
+        
     }
 
     else if (
@@ -48,10 +47,14 @@ function playRound() {
             
         }
     } 
-    // Make a function that plays 5 rounds    
+    // Make a function that plays 5 rounds  
+    // Make a log for round  
     function game() {
-        for (let i = 0; i <= 4; i++) {
-        playRound();
+
+            for (let i = 0; i <= 4; i++) {
+            console.log("Round " + (i+1));
+            playRound();
+            console.log("-----------------------");
         }
     }
 
@@ -63,5 +66,5 @@ function playRound() {
      
      
 
-// Make an input for player choice
+
 
